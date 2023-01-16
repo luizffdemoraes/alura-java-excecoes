@@ -12,26 +12,16 @@ public class Fluxo {
         System.out.println("Fim do main");
     }
 
-    private static void metodo1() {
+    private static void metodo1() throws MinhaExcecao {
         System.out.println("Ini do metodo1");
         metodo2();
         System.out.println("Fim do metodo1");
     }
 
-    private static void metodo2() {
-        System.out.println("Ini do metodo2");
-        throw new MinhaExcecao("deu muito errado");
-        //System.out.println("Fim do metodo2");
-       /*
-        for (int i = 1; i <= 5; i++) {
-
-            System.out.println(i);
-            // int a = i / 0;
-            Conta c = null;
-            c.deposita();
-            System.out.println("Fim do metodo2");
-            }
-        */
-
+    //Gera o erro StackOverFlowError sobrecarregou a pilha de execução
+    private static void metodo2() throws MinhaExcecao {
+        System.out.println("Chamando método 2");
+        metodo1();
+        System.out.println("Fim do método 2");
     }
 }
