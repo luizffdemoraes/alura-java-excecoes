@@ -5,10 +5,8 @@ public class TesteConexao {
 
         try (Conexao conexao = new Conexao()) {
             conexao.leDados();
-        } catch (IllegalStateException ex) {
+        } catch (Exception ex) {
             System.out.println("Deu erro na conexao");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
 
 
